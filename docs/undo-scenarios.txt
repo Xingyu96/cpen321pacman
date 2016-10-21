@@ -1,0 +1,38 @@
+STORY 7 -- UNDO:
+As a player, I want to be able to undo a move I regret, 
+including all ghost moves made since my previous move, 
+so that I can continue the game in the state just before 
+my last move.
+
+Scenario 7.1: Ghost is close
+Given a Ghost is close to the user;
+when I hit the undo button;
+then the Pacman and Ghost move back to their previous space.
+
+Scenario 7.2: Missed a coin
+Given the user missed a coin;
+When I hit the undo button;
+The users and ghosts moves back to their previous spot.
+
+Scenario 7.3 : User just died
+Given the user has just been killed;
+When I hit the undo button;
+The User is resurrected and moves back to their previous space,
+as does the ghost.
+
+Scenario 7.4: Took the wrong path
+Given the user took the wrong path;
+When I hit the undo button;
+The User and all ghosts moves back to their previous space.
+
+Scenario 7.5: Pressed Start
+Given the user accidently restarted the game and wants to return
+to the same spot they were in;
+When I hit the undo button;
+The user and all ghosts return to the spots they were in before the
+start button was pressed.
+
+Scenario 7.6: Start
+Given the user has not made any moves;
+When I hit the undo button;
+nothing happens.
