@@ -8,18 +8,15 @@ import javax.swing.JButton;
 import org.jpacman.framework.ui.ButtonPanel;
 
 public class UndoButton extends ButtonPanel{
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private JButton undoButton;
 	
 //	@Override
 //	 public void initialize() {  
-//	    super.initialize();
-////    	startButton = new JButton("Start");
-////    	stopButton = new JButton("Stop");
-//    	undoButton = new JButton("Undo motherfuckassssssss");
+//  	  	startButton = new JButton("Start");
+//       	stopButton = new JButton("Stop");
+//    	    undoButton = new JButton("Undo");
 ////    	initializeStartButton();
 ////    	initializeStopButton();
 ////    	initializeUndoButton();
@@ -43,9 +40,19 @@ public class UndoButton extends ButtonPanel{
 //    	undoButton.setName("jpacman.undo");
 //    	undoButton.requestFocusInWindow();
 //	}
+	
+	/**
+	 * Casts getPacmanInteractor() to UndoPacmanInteraction so Undo button appears
+	 * @return pacmanInteraction of the Game with undo
+	 */
+	@Override
+	public UndoPacmanInteraction getPacmanInteractor() {
+		return (UndoPacmanInteraction) super.getPacmanInteractor();
+	}
+	
 	@Override
 	/**
-	 * Actually create the buttons.
+	 * Adding in the undo button.
 	 */
 	public void initialize() {
 		super.initialize();
@@ -74,10 +81,8 @@ public class UndoButton extends ButtonPanel{
 		undoButton.setName("jpacman.undo");
 	}
 
-	@Override
-	public UndoPacmanInteraction getPacmanInteractor() {
-		return (UndoPacmanInteraction) super.getPacmanInteractor();
-	}
+	
+	
 	
 	
 	
