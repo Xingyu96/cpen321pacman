@@ -19,7 +19,9 @@ public class UndoPacmanInteraction extends PacmanInteraction{
 //    public void undoLeft(){
 //        movePlayer(Direction.RIGHT);
 //    }
-	
+	/**
+	 * updates the state and calls undo from UndoableGame
+	 */
 	public void undo() {
 		updateState();
 		((UndoableGame) this.getGame()).undo();
